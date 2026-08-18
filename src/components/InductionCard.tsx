@@ -81,55 +81,131 @@ export const InductionCard = forwardRef<HTMLDivElement, { data: CardData }>(({ d
   return (
     <div
       ref={ref}
-      className="relative aspect-[1.5/1] w-full overflow-hidden rounded-[28px] bg-brand-paper shadow-2xl"
+      className="relative aspect-[1.6/1] w-full overflow-hidden rounded-[28px] bg-brand-paper shadow-2xl"
     >
-      {/* Decoraciones esquinas */}
-      <svg className="pointer-events-none absolute inset-0 h-full w-full" viewBox="0 0 900 600" preserveAspectRatio="none">
-        <path d="M0 0H240C130 65 55 155 0 265Z" className="fill-brand-navy" />
-        <path d="M232 0H265C150 70 70 165 22 285L0 262C60 150 130 60 232 0Z" className="fill-brand-green" />
-        <path d="M900 0V150C830 100 760 55 660 0Z" className="fill-brand-green" />
-        <path d="M900 60V190C840 140 800 105 745 65Z" className="fill-brand-navy" />
-        <path d="M0 600V430C90 470 160 520 210 600Z" className="fill-brand-green" />
-        <path d="M900 600H560c110-60 210-130 340-170Z" className="fill-brand-navy" />
-        <path d="M900 600H660c90-45 160-85 240-105Z" className="fill-brand-orange" />
+      {/* Fondo de decoraciones esquinas */}
+      <svg
+        className="pointer-events-none absolute inset-0 h-full w-full"
+        viewBox="0 0 900 562"
+        preserveAspectRatio="none"
+      >
+        {/* Esquina superior izquierda: navy + green */}
+        <path d="M0 0h180c-40 70-110 140-180 190Z" className="fill-brand-navy" />
+        <path d="M0 0h60c-10 80-40 160-60 210Z" className="fill-brand-green" />
+
+        {/* Esquina superior derecha: green + navy */}
+        <path d="M900 0v160c-100-50-200-90-320-160Z" className="fill-brand-green" />
+        <path d="M900 0v90c-60-20-140-50-230-90Z" className="fill-brand-navy" />
+
+        {/* Esquina inferior izquierda: green */}
+        <path d="M0 562v-180c100 30 180 100 240 180Z" className="fill-brand-green" />
+
+        {/* Esquina inferior derecha: navy + orange */}
+        <path d="M900 562h-280c80-60 180-110 280-150Z" className="fill-brand-navy" />
+        <path d="M900 562h-180c50-40 110-70 180-90Z" className="fill-brand-orange" />
       </svg>
 
-      <Leaf className="absolute right-8 top-6 h-24 w-24 text-brand-paper opacity-80" />
-      <Leaf className="absolute bottom-4 left-6 h-24 w-24 text-brand-paper opacity-80" />
+      {/* Patrones de puntos decorativos */}
+      <svg
+        className="pointer-events-none absolute bottom-0 left-0 h-[40%] w-[40%] opacity-30"
+        viewBox="0 0 200 200"
+        preserveAspectRatio="none"
+      >
+        {Array.from({ length: 8 }).map((_, r) =>
+          Array.from({ length: 8 }).map((_, c) => (
+            <circle
+              key={`${r}-${c}`}
+              cx={20 + c * 24}
+              cy={20 + r * 24}
+              r="3"
+              className="fill-brand-navy"
+            />
+          ))
+        )}
+      </svg>
+      <svg
+        className="pointer-events-none absolute bottom-0 right-0 h-[35%] w-[35%] opacity-30"
+        viewBox="0 0 200 200"
+        preserveAspectRatio="none"
+      >
+        {Array.from({ length: 7 }).map((_, r) =>
+          Array.from({ length: 7 }).map((_, c) => (
+            <circle
+              key={`${r}-${c}`}
+              cx={180 - c * 24}
+              cy={180 - r * 24}
+              r="3"
+              className="fill-brand-orange"
+            />
+          ))
+        )}
+      </svg>
 
-      <div className="relative flex h-full flex-col px-[7%] py-[5%]">
-        <h1 className="text-center font-display text-[3.4vw] font-extrabold uppercase leading-none tracking-tight text-brand-navy sm:text-[2.6cqw] md:text-[38px]">
+      {/* Hojas decorativas */}
+      <Leaf className="absolute right-6 top-5 h-28 w-28 text-brand-paper opacity-90" />
+      <Leaf className="absolute bottom-5 left-6 h-28 w-28 text-brand-paper opacity-90" />
+
+      <div className="relative flex h-full flex-col px-[6%] py-[4%]">
+        {/* Título */}
+        <h1 className="text-center font-display text-[3.4vw] font-extrabold uppercase leading-none tracking-tight text-brand-navy sm:text-[2.6cqw] md:text-[40px]">
           Inducción <span className="text-brand-green">SST</span>
         </h1>
 
-        <div className="mt-3 flex items-center justify-center gap-5">
+        {/* Logo + franjas */}
+        <div className="mt-3 flex items-center justify-center gap-4">
           <div className="flex items-center gap-2">
-            <span className="h-[4px] w-10 rounded-full bg-brand-green" />
-            <span className="h-[4px] w-10 rounded-full bg-brand-navy" />
-            <span className="h-[4px] w-10 rounded-full bg-brand-orange" />
+            <span className="h-[5px] w-12 rounded-full bg-brand-green" />
+            <span className="h-[5px] w-12 rounded-full bg-brand-navy" />
+            <span className="h-[5px] w-12 rounded-full bg-brand-orange" />
           </div>
-          <img src={logoAsset.url} alt="Fractal Estrategias Sostenibles" className="h-[64px] w-auto" />
+          <img src={logoAsset.url} alt="Fractal Estrategias Sostenibles" className="h-[70px] w-auto" />
           <div className="flex items-center gap-2">
-            <span className="h-[4px] w-10 rounded-full bg-brand-green" />
-            <span className="h-[4px] w-10 rounded-full bg-brand-navy" />
-            <span className="h-[4px] w-10 rounded-full bg-brand-orange" />
+            <span className="h-[5px] w-12 rounded-full bg-brand-green" />
+            <span className="h-[5px] w-12 rounded-full bg-brand-navy" />
+            <span className="h-[5px] w-12 rounded-full bg-brand-orange" />
           </div>
         </div>
 
-        <div className="mt-6 grid flex-1 grid-cols-2 gap-x-8 gap-y-5">
-          <div className="flex flex-col justify-center gap-5">
+        {/* Cuadrícula de campos */}
+        <div className="mt-4 grid flex-1 grid-cols-2 gap-x-0">
+          {/* Columna izquierda */}
+          <div className="flex flex-col justify-center gap-4 px-[4%] pr-[6%]">
             <Field label="Nombre:" value={data.nombre} color="navy" icon={IconUser} />
             <Field label="Cedula/DPI:" value={data.cedula} color="green" icon={IconId} />
             <Field label="Proyecto:" value={data.proyecto} color="navy" icon={IconHelmet} />
           </div>
-          <div className="flex flex-col justify-center gap-8">
+
+          {/* Separador vertical punteado */}
+          <div className="relative flex items-center justify-center">
+            <svg className="h-[80%] w-4" viewBox="0 0 10 200" preserveAspectRatio="none">
+              <line
+                x1="5"
+                y1="0"
+                x2="5"
+                y2="200"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeDasharray="8 6"
+                className="text-brand-navy"
+              />
+              <circle cx="5" cy="20" r="4" className="fill-brand-green" />
+              <circle cx="5" cy="100" r="4" className="fill-brand-navy" />
+              <circle cx="5" cy="180" r="4" className="fill-brand-orange" />
+            </svg>
+          </div>
+
+          {/* Columna derecha */}
+          <div className="flex flex-col justify-center gap-6 px-[6%] pl-[8%]">
             <Field label="Fecha emisión:" value={data.fechaEmision} color="green" icon={IconCal} />
             <Field label="Válido hasta:" value={data.validoHasta} color="orange" icon={IconCal} />
           </div>
         </div>
 
-        <p className="mt-2 text-center font-script text-[26px] leading-tight text-brand-navy">
-          Con compromiso, <span className="text-brand-green">hacemos la diferencia.</span>
+        {/* Lema */}
+        <p className="mt-2 text-center font-script text-[28px] leading-tight text-brand-navy">
+          Con compromiso,
+          <br />
+          <span className="text-brand-green">hacemos la diferencia.</span>
         </p>
       </div>
     </div>
