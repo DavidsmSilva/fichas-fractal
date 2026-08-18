@@ -11,7 +11,7 @@ export type CardData = {
 
 function Leaf({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 100 100" className={className} fill="none" stroke="currentColor" strokeWidth="2.5">
+    <svg viewBox="0 0 100 100" className={className} fill="currentColor" stroke="currentColor" strokeWidth="2.5">
       <path d="M20 80c0-30 20-52 55-58-4 34-24 54-55 58Z" />
       <path d="M20 80c14-20 26-32 45-42" strokeLinecap="round" />
     </svg>
@@ -64,9 +64,9 @@ const IconId = (
 );
 const IconHelmet = (
   <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M4 16a8 8 0 0 1 16 0" />
-    <path d="M2.5 16.5h19" strokeLinecap="round" />
-    <path d="M9.5 8.6V6.2a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v2.4" strokeLinecap="round" />
+    <path d="M5.5 15.5v-3a6.5 6.5 0 0 1 13 0v3" />
+    <path d="M3 15.5h18" strokeLinecap="round" />
+    <path d="M12 4.6v3.4" strokeLinecap="round" />
   </svg>
 );
 const IconCal = (
@@ -94,8 +94,8 @@ export const InductionCard = forwardRef<HTMLDivElement, { data: CardData }>(({ d
         <path d="M900 600H660c90-45 160-85 240-105Z" className="fill-brand-orange" />
       </svg>
 
-      <Leaf className="absolute right-8 top-6 h-24 w-24 text-brand-paper opacity-80" />
-      <Leaf className="absolute bottom-4 left-6 h-24 w-24 text-brand-paper opacity-80" />
+      <Leaf className="absolute right-8 top-14 h-16 w-16 text-brand-paper opacity-80" />
+      <Leaf className="absolute bottom-6 left-4 h-16 w-16 text-brand-paper opacity-80" />
 
       <div className="relative flex h-full flex-col px-[7%] py-[5%]">
         <h1 className="text-center font-display text-[3.4vw] font-extrabold uppercase leading-none tracking-tight text-brand-navy sm:text-[2.6cqw] md:text-[38px]">
