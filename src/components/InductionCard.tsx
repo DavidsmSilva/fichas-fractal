@@ -1,5 +1,4 @@
 import { forwardRef } from "react";
-import logoAsset from "@/assets/logo.png.asset.json";
 
 export type CardData = {
   nombre: string;
@@ -108,7 +107,7 @@ export const InductionCard = forwardRef<HTMLDivElement, { data: CardData }>(({ d
             <span className="h-[4px] w-10 rounded-full bg-brand-navy" />
             <span className="h-[4px] w-10 rounded-full bg-brand-orange" />
           </div>
-          <img src={logoAsset.url} alt="Fractal Estrategias Sostenibles" className="h-[96px] w-auto" />
+          <img src={import.meta.env.BASE_URL + "logo.png"} alt="Fractal Estrategias Sostenibles" className="h-[96px] w-auto" />
           <div className="flex items-center gap-2">
             <span className="h-[4px] w-10 rounded-full bg-brand-green" />
             <span className="h-[4px] w-10 rounded-full bg-brand-navy" />

@@ -12,4 +12,13 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Subdirectory deployments (e.g. GitHub Pages project site) set VITE_BASE_PATH,
+  // e.g. "/fichas-fractal/". Default "/" keeps the Lovable deploy unchanged.
+  vite: { base: process.env.VITE_BASE_PATH || "/" },
+  // Static export for GitHub Pages: enabled only when STATIC_EXPORT=true.
+  // Builds with the node-server preset so CI can run the SSR server, capture the
+  // rendered HTML as index.html, and publish .output/public as a static site.
+  // Lovable's sandbox forces its own cloudflare preset, so this never affects the
+  // Lovable deploy.
+  nitro: process.env.STATIC_EXPORT === "true" ? { preset: "node-server" } : undefined,
 });
