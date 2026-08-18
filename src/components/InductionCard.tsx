@@ -128,9 +128,8 @@ export const InductionCard = forwardRef<HTMLDivElement, { data: CardData }>(({ d
           Con compromiso, <span className="text-brand-green">hacemos la diferencia.</span>
         </p>
       </div>
-
-      </div>
     </div>
+
   );
 });
 InductionCard.displayName = "InductionCard";
