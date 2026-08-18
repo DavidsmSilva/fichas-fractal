@@ -63,9 +63,9 @@ const IconId = (
 );
 const IconHelmet = (
   <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M3 16a9 9 0 0 1 18 0" />
-    <path d="M2 16h20" strokeLinecap="round" />
-    <path d="M10 7.5V5.5h4v2" strokeLinecap="round" />
+    <path d="M4 16a8 8 0 0 1 16 0" />
+    <path d="M2.5 16.5h19" strokeLinecap="round" />
+    <path d="M9.5 8.6V6.2a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v2.4" strokeLinecap="round" />
   </svg>
 );
 const IconCal = (
@@ -84,8 +84,8 @@ export const InductionCard = forwardRef<HTMLDivElement, { data: CardData }>(({ d
     >
       {/* Decoraciones esquinas */}
       <svg className="pointer-events-none absolute inset-0 h-full w-full" viewBox="0 0 900 600" preserveAspectRatio="none">
-        <path d="M0 0H250C140 60 60 150 0 260Z" className="fill-brand-navy" />
-        <path d="M0 0H120C70 90 30 170 0 250Z" className="fill-brand-green" opacity="0.9" />
+        <path d="M0 0H240C130 65 55 155 0 265Z" className="fill-brand-navy" />
+        <path d="M232 0H265C150 70 70 165 22 285L0 262C60 150 130 60 232 0Z" className="fill-brand-green" />
         <path d="M900 0V150C830 100 760 55 660 0Z" className="fill-brand-green" />
         <path d="M900 60V190C840 140 800 105 745 65Z" className="fill-brand-navy" />
         <path d="M0 600V430C90 470 160 520 210 600Z" className="fill-brand-green" />
@@ -130,7 +130,7 @@ export const InductionCard = forwardRef<HTMLDivElement, { data: CardData }>(({ d
           </div>
         </div>
 
-        <p className="mt-2 text-center font-script text-3xl leading-tight text-brand-navy">
+        <p className="mt-2 text-center font-script text-[26px] leading-tight text-brand-navy">
           Con compromiso, <span className="text-brand-green">hacemos la diferencia.</span>
         </p>
       </div>
