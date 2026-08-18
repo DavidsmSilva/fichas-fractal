@@ -5,6 +5,12 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { InductionCard, type CardData } from "@/components/InductionCard";
 
+const fmt = (iso: string) => {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(iso)) return iso;
+  const [y, m, d] = iso.split("-");
+  return `${d}/${m}/${y}`;
+};
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -101,7 +107,14 @@ function Index() {
 
           <section>
             <div className="mx-auto w-full max-w-[900px]">
-              <InductionCard ref={cardRef} data={data} />
+              <InductionCard
+                ref={cardRef}
+                data={{
+                  ...data,
+                  fechaEmision: fmt(data.fechaEmision),
+                  validoHasta: fmt(data.validoHasta),
+                }}
+              />
             </div>
           </section>
         </div>
