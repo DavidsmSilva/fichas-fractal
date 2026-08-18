@@ -1,4 +1,5 @@
 import { forwardRef } from "react";
+import logoAsset from "@/assets/logo.png.asset.json";
 
 export type CardData = {
   nombre: string;
@@ -101,21 +102,18 @@ export const InductionCard = forwardRef<HTMLDivElement, { data: CardData }>(({ d
           Inducción <span className="text-brand-green">SST</span>
         </h1>
 
-        <div className="mt-4 flex items-center justify-center gap-3">
-          <span className="h-[3px] w-8 rounded bg-brand-green" />
-          <span className="h-[3px] w-8 rounded bg-brand-navy" />
-          <div className="px-3 text-center">
-            <p className="font-display text-2xl font-medium tracking-wide text-brand-navy">
-              Fractal
-              <span className="ml-1 inline-flex items-center align-middle">
-                <span className="-mr-2 inline-block h-5 w-5 rounded-full border-[4px] border-brand-green" />
-                <span className="inline-block h-5 w-5 rounded-full border-[4px] border-brand-navy" />
-              </span>
-            </p>
-            <p className="font-sans text-[11px] tracking-wide text-brand-navy/70">Estrategias Sostenibles</p>
+        <div className="mt-3 flex items-center justify-center gap-5">
+          <div className="flex items-center gap-2">
+            <span className="h-[4px] w-10 rounded-full bg-brand-green" />
+            <span className="h-[4px] w-10 rounded-full bg-brand-navy" />
+            <span className="h-[4px] w-10 rounded-full bg-brand-orange" />
           </div>
-          <span className="h-[3px] w-8 rounded bg-brand-navy" />
-          <span className="h-[3px] w-8 rounded bg-brand-orange" />
+          <img src={logoAsset.url} alt="Fractal Estrategias Sostenibles" className="h-[64px] w-auto" />
+          <div className="flex items-center gap-2">
+            <span className="h-[4px] w-10 rounded-full bg-brand-green" />
+            <span className="h-[4px] w-10 rounded-full bg-brand-navy" />
+            <span className="h-[4px] w-10 rounded-full bg-brand-orange" />
+          </div>
         </div>
 
         <div className="mt-6 grid flex-1 grid-cols-2 gap-x-8 gap-y-5">
