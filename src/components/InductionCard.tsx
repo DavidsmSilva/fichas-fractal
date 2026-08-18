@@ -97,39 +97,42 @@ export const InductionCard = forwardRef<HTMLDivElement, { data: CardData }>(({ d
       <Leaf className="absolute right-8 top-6 h-24 w-24 text-brand-paper opacity-80" />
       <Leaf className="absolute bottom-4 left-6 h-24 w-24 text-brand-paper opacity-80" />
 
-      <div className="relative flex h-full flex-col px-[8%] py-[4.5%]">
-        <h1 className="text-center font-display text-[40px] font-extrabold uppercase leading-none tracking-tight text-brand-navy">
+      <div className="relative flex h-full flex-col px-[7%] py-[5%]">
+        <h1 className="text-center font-display text-[3.4vw] font-extrabold uppercase leading-none tracking-tight text-brand-navy sm:text-[2.6cqw] md:text-[38px]">
           Inducción <span className="text-brand-green">SST</span>
         </h1>
 
-        <div className="mt-3 flex items-center justify-center gap-6">
+        <div className="mt-3 flex items-center justify-center gap-5">
           <div className="flex items-center gap-2">
-            <span className="h-[5px] w-12 rounded-full bg-brand-green" />
-            <span className="h-[5px] w-12 rounded-full bg-brand-navy" />
-            <span className="h-[5px] w-12 rounded-full bg-brand-orange" />
+            <span className="h-[4px] w-10 rounded-full bg-brand-green" />
+            <span className="h-[4px] w-10 rounded-full bg-brand-navy" />
+            <span className="h-[4px] w-10 rounded-full bg-brand-orange" />
           </div>
-          <img src={logoAsset.url} alt="Fractal Estrategias Sostenibles" className="h-[110px] w-auto" />
+          <img src={logoAsset.url} alt="Fractal Estrategias Sostenibles" className="h-[64px] w-auto" />
           <div className="flex items-center gap-2">
-            <span className="h-[5px] w-12 rounded-full bg-brand-green" />
-            <span className="h-[5px] w-12 rounded-full bg-brand-navy" />
-            <span className="h-[5px] w-12 rounded-full bg-brand-orange" />
+            <span className="h-[4px] w-10 rounded-full bg-brand-green" />
+            <span className="h-[4px] w-10 rounded-full bg-brand-navy" />
+            <span className="h-[4px] w-10 rounded-full bg-brand-orange" />
           </div>
         </div>
 
-        <div className="mt-5 flex flex-1 flex-col justify-center gap-4">
-          <Field label="Nombre:" value={data.nombre} color="navy" icon={IconUser} />
-          <Field label="Cedula/DPI:" value={data.cedula} color="green" icon={IconId} />
-          <Field label="Proyecto:" value={data.proyecto} color="navy" icon={IconHelmet} />
-          <Field label="Fecha emisión:" value={data.fechaEmision} color="green" icon={IconCal} />
-          <Field label="Válido hasta:" value={data.validoHasta} color="orange" icon={IconCal} />
+        <div className="mt-6 grid flex-1 grid-cols-2 gap-x-8 gap-y-5">
+          <div className="flex flex-col justify-center gap-5">
+            <Field label="Nombre:" value={data.nombre} color="navy" icon={IconUser} />
+            <Field label="Cedula/DPI:" value={data.cedula} color="green" icon={IconId} />
+            <Field label="Proyecto:" value={data.proyecto} color="navy" icon={IconHelmet} />
+          </div>
+          <div className="flex flex-col justify-center gap-8">
+            <Field label="Fecha emisión:" value={data.fechaEmision} color="green" icon={IconCal} />
+            <Field label="Válido hasta:" value={data.validoHasta} color="orange" icon={IconCal} />
+          </div>
         </div>
 
-        <p className="mt-2 text-center font-script text-[28px] leading-tight text-brand-navy">
+        <p className="mt-2 text-center font-script text-[26px] leading-tight text-brand-navy">
           Con compromiso, <span className="text-brand-green">hacemos la diferencia.</span>
         </p>
       </div>
     </div>
-
   );
 });
 InductionCard.displayName = "InductionCard";
